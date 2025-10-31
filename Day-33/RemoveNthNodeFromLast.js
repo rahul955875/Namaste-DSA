@@ -35,3 +35,24 @@ const node = {
   },
 };
 console.log(removeNthFromEnd(node, 3), "this");
+
+//new approach just samall change
+
+function removeNthNodeFromEnd2(head, n) {
+  const sentinel = { val: 0, next: null };
+  sentinel.next = head;
+
+  let length = 0;
+  while (head) {
+    head = head.next;
+    length++;
+  }
+
+  let prev = sentinel;
+  let prevPos = length - n;
+  for (let i = 0; i < prevPos; i++) {
+    prev = prev.next;
+  }
+  prev.next = prev.next.next;
+  return sentinel.next;
+}

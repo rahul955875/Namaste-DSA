@@ -34,5 +34,6 @@ function removeLinkedList2(head, val) {
       prev = prev.next;
     }
   }
-  return head;
+  return sentinal.next;
+  //dont return head because all component is val then prev.next cant be modified.
 }

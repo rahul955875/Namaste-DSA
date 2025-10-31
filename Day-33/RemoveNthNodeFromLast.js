@@ -36,7 +36,7 @@ const node = {
 };
 console.log(removeNthFromEnd(node, 3), "this");
 
-//new approach just samall change
+//new approach just small change
 
 function removeNthNodeFromEnd2(head, n) {
   const sentinel = { val: 0, next: null };

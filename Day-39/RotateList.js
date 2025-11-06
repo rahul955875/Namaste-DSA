@@ -1,4 +1,4 @@
-var rotateRight = function (head, k) {
+var rotateRight1 = function (head, k) {
   if (!head || !head.next) return head;
   let curr = head;
   let length = 1;
@@ -17,6 +17,30 @@ var rotateRight = function (head, k) {
   move.next = null;
   return saveNewHead;
 };
+
+const rotateRight = (head, k) => {
+  if (!head || !head.next || k == 0) return head;
+  let curr = head;
+  let length = 1;
+  while (curr.next) {
+    curr = curr.next;
+    length++;
+  }
+  let slow = head;
+  let fast = head;
+  let count = 0;
+  while (fast.next) {
+    fast = fast.next;
+    if (count >= k % length) {
+      slow = slow.next;
+    }
+    count++;
+  }
+  fast.next = head;
+  let newHead = slow.next;
+  slow.next = null;
+  return newHead;
+};
 head = {
   val: 1,
   next: {
@@ -33,4 +57,4 @@ head = {
     },
   },
 };
-console.dir(rotateRight(head, 1), { depth: null });
+console.dir(rotateRight(head, 2), { depth: null });

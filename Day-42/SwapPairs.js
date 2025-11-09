@@ -1,0 +1,17 @@
+function swapPairs(head) {}
+
+head = {
+  val: 1,
+  next: {
+    val: 2,
+    next: {
+      val: 3,
+      next: {
+        val: 4,
+        next: null,
+      },
+    },
+  },
+};
+
+console.dir(swapPairs(head), { depth: null });

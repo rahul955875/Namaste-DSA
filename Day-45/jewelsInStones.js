@@ -1,8 +1,4 @@
-/**
- * @param {string} jewels
- * @param {string} stones
- * @return {number}
- */
+//brute force approach
 var numJewelsInStones = function (jewels, stones) {
   let count = 0;
   for (let i = 0; i < stones.length; i++) {
@@ -17,3 +13,17 @@ var numJewelsInStones = function (jewels, stones) {
 };
 
 console.log(numJewelsInStones("aA", "aAAzzza"));
+
+//optimize approach
+var numJewelsInStones = function (jewels, stones) {
+  let set = new Set([...jewels]); //s.c - o(1) 52 eng letters overall tc = o(n) sp = o(1)
+  let count = 0;
+
+  for (let i = 0; i < stones.length; i++) {
+    if (set.has(stones[i])) {
+      //searching o(1)
+      count++;
+    }
+  }
+  return count;
+};

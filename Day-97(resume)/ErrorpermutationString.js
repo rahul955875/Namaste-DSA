@@ -40,6 +40,8 @@ const getPermutationForS1 =(s1)=>{
  }
  return permutationsArr
 }
-// console.log(checkInclusion(" ","eidbaooo"))
-// console.log(checkInclusion("ab","eidaooo"))
-console.log(checkInclusion("abcdxabcde","abcdeabcdx" ))
+// console.log(checkInclusion(" ","eidbaooo")) works
+// console.log(checkInclusion("ab","eidaooo")) works
+console.log(checkInclusion("abcdxabcde","abcdeabcdx" )) //fails here
+
+//its dont have valid permutation - not valid solution
